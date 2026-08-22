@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spider Neon Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root{--bg:#0b0b0e;--panel:#16161a;--panel2:#111116;--red:#ff1e27;--red2:#ff0033;--text:#f8f8fb;--muted:#9b9ba5;--line:#292930;--green:#35e18a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;min-height:100vh}.web-bg{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 0%,#ff00330d,transparent 35%),radial-gradient(circle at 90% 40%,#ff00330b,transparent 35%);z-index:-1}.topbar{height:74px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 5%;gap:30px;background:#0b0b0ee8;backdrop-filter:blur(18px);position:sticky;top:0;z-index:5}.brand{display:flex;align-items:center;gap:10px;margin-right:auto}.brand strong{font-family:Outfit;font-size:18px;letter-spacing:2px}.brand small{display:block;color:var(--muted);font-size:8px;letter-spacing:2px}.spider{color:var(--red);font-size:28px;text-shadow:0 0 14px #ff0033}.topbar nav{display:flex;gap:5px}.nav-btn,.icon-btn{border:1px solid transparent;background:transparent;color:var(--muted);padding:11px 15px;border-radius:10px;cursor:pointer;font-weight:600}.nav-btn.active,.nav-btn:hover{background:#ff003312;color:#fff;border-color:#ff00333b}.icon-btn{font-size:18px}.tab{display:none;max-width:1280px;margin:auto;padding:52px 5% 80px}.tab.active{display:block}.hero{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:32px}.hero.compact{margin-bottom:28px}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--red);font-weight:800;margin:0 0 10px}.hero h1{font:800 clamp(38px,6vw,66px)/.95 Outfit;margin:0}.hero h1 span{color:transparent;-webkit-text-stroke:1px #fff;text-shadow:0 0 20px #ff003322}.muted{color:var(--muted);margin:16px 0 0}.primary{background:var(--red);color:white;border:0;padding:14px 19px;border-radius:11px;font-weight:800;cursor:pointer;box-shadow:0 0 20px #ff003333;transition:.2s}.primary:hover{transform:translateY(-2px);box-shadow:0 0 28px #ff003366}.toolbar{margin-bottom:22px}.search{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:0 15px}.search input{width:100%;height:48px;background:none;border:0;outline:0;color:#fff;font-size:14px}.category-grid,.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}.category,.product,.metric-card,.donut-card{background:linear-gradient(145deg,#18181d,#111116);border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 35px #0005;transition:.2s}.category:hover,.product:hover{border-color:#ff003355;box-shadow:0 0 18px #ff00331c}.category{padding:18px;animation:up .35s ease both}.category-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}.cat-icon{font-size:23px}.category-head h3{margin:0;font-family:Outfit;font-size:19px;flex:1}.mini{border:0;background:#ffffff08;color:#aaa;border-radius:8px;padding:6px 8px;cursor:pointer}.links{display:grid;gap:8px}.shortcut{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #ffffff09;background:#ffffff04;border-radius:10px;color:#eee;text-decoration:none}.shortcut:hover{border-color:#ff003355;background:#ff003308}.shortcut .type{font-size:18px}.shortcut span:nth-child(2){overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}.tag{font-size:9px;color:#aaa;background:#ffffff08;padding:4px 6px;border-radius:5px}.add-item{width:100%;margin-top:12px;border:1px dashed #555;background:transparent;color:#aaa;border-radius:9px;padding:9px;cursor:pointer}.finance-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:18px;margin-bottom:28px}.metric-card,.donut-card{padding:24px;min-height:150px}.metric-card small,.donut-card small{font-size:10px;letter-spacing:2px;color:#888}.metric-card strong{display:block;font:800 39px Outfit;margin:12px 0 5px}.metric-card span{color:#777;font-size:12px}.donut-card{display:flex;align-items:center;gap:28px}.donut{width:110px;height:110px;border-radius:50%;background:conic-gradient(var(--red) 0 0%,#421218 0 100%);position:relative}.donut:after{content:"";position:absolute;inset:25px;background:var(--panel);border-radius:50%}.legend{display:grid;gap:8px;margin-top:9px;font-size:12px}.legend div{display:flex;gap:8px;align-items:center}.dot{width:8px;height:8px;border-radius:50%;background:var(--red)}.product{overflow:hidden}.product img{width:100%;height:180px;object-fit:cover;background:#0d0d11}.product-body{padding:16px}.product h3{margin:0 0 9px;font-family:Outfit}.price{font-size:22px;font-weight:800}.product-actions{display:flex;gap:7px;margin-top:14px}.action{flex:1;border:1px solid var(--line);background:#ffffff07;color:#ddd;padding:9px;border-radius:8px;cursor:pointer}.action.buy{border-color:#35e18a55;color:var(--green)}.action.del{flex:0 0 auto;color:#ff6b72}.empty{text-align:center;padding:55px;color:#666;border:1px dashed #333;border-radius:14px;margin-top:20px}.hidden{display:none!important}.modal-backdrop{position:fixed;inset:0;background:#000b;backdrop-filter:blur(8px);display:grid;place-items:center;padding:18px;z-index:20}.modal{width:min(520px,100%);background:#141419;border:1px solid #ff003344;border-radius:18px;padding:27px;position:relative;box-shadow:0 0 50px #ff003322;animation:modal .2s ease}.modal h2{font:700 29px Outfit;margin:0 0 22px}.close{position:absolute;right:17px;top:13px;border:0;background:none;color:#888;font-size:29px;cursor:pointer}.field{display:grid;gap:7px;margin-bottom:14px}.field label{font-size:11px;color:#999;letter-spacing:1px}.field input,.field select{background:#0d0d11;color:#fff;border:1px solid #303039;border-radius:9px;padding:12px;outline:none}.field input:focus,.field select:focus{border-color:#ff003366}.form-submit{width:100%;margin-top:7px}@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes modal{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}@media(max-width:700px){.topbar{padding:0 16px;height:65px}.brand small{display:none}.topbar nav{gap:0}.nav-btn{padding:9px 8px;font-size:12px}.tab{padding:35px 16px 60px}.hero{align-items:start;flex-direction:column}.hero h1{font-size:45px}.primary{width:100%}.finance-grid{grid-template-columns:1fr}.donut-card{min-height:140px}.category-grid,.product-grid{grid-template-columns:1fr}.product img{height:210px}}
+
+</style>
+</head>
+<body>
+  <div class="web-bg"></div>
+  <header class="topbar">
+    <div class="brand"><span class="spider">✦</span><div><strong>NEON</strong><small>COMMAND CENTER</small></div></div>
+    <nav>
+      <button class="nav-btn active" data-tab="launcher">⚡ Facilitador</button>
+      <button class="nav-btn" data-tab="cart">🛒 Carrinho</button>
+    </nav>
+    <button class="icon-btn" id="themeHint" title="Interface Neon">◈</button>
+  </header>
+
+  <main>
+    <section id="launcher" class="tab active">
+      <div class="hero">
+        <div><p class="eyebrow">QUICK LAUNCHER</p><h1>Seu painel.<br><span>Do seu jeito.</span></h1><p class="muted">Organize links, arquivos e atalhos em categorias.</p></div>
+        <button class="primary" id="newCategory">＋ Criar Categoria</button>
+      </div>
+      <div class="toolbar">
+        <div class="search"><span>⌕</span><input id="search" placeholder="Buscar categorias e atalhos..."></div>
+      </div>
+      <div id="categories" class="category-grid"></div>
+      <div id="emptyCategories" class="empty hidden">Nenhuma categoria encontrada.</div>
+    </section>
+
+    <section id="cart" class="tab">
+      <div class="hero compact"><div><p class="eyebrow">WISHLIST / FINANCE</p><h1>Carrinho <span>& métricas.</span></h1><p class="muted">Controle seus desejos antes de comprar.</p></div><button class="primary" id="newProduct">＋ Adicionar Produto</button></div>
+      <div class="finance-grid">
+        <div class="metric-card"><small>TOTAL ATIVO</small><strong id="total">R$ 0,00</strong><span>valor dos itens não comprados</span></div>
+        <div class="donut-card"><div class="donut" id="donut"></div><div><small>DISTRIBUIÇÃO</small><div id="legend" class="legend"></div></div></div>
+      </div>
+      <div id="products" class="product-grid"></div>
+      <div id="emptyProducts" class="empty">Nenhum produto cadastrado ainda.</div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal">
+      <button class="close" id="closeModal">×</button>
+      <p class="eyebrow" id="modalEyebrow">NOVO</p>
+      <h2 id="modalTitle">Criar Categoria</h2>
+      <form id="modalForm"></form>
+    </div>
+  </div>
+
+  <script>
+const KEY="spiderNeonData";
+let data=JSON.parse(localStorage.getItem(KEY)||'null')||{
+ categories:[
+  {id:1,name:"Trabalho",icon:"💼",items:[{id:11,name:"Google Drive",url:"https://drive.google.com",kind:"🔗"}]},
+  {id:2,name:"Entretenimento",icon:"🎮",items:[{id:21,name:"YouTube",url:"https://youtube.com",kind:"🔗"},{id:22,name:"Netflix",url:"https://netflix.com",kind:"🔗"}]}
+ ],
+ products:[]
+};
+function save(){localStorage.setItem(KEY,JSON.stringify(data))}
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+function renderCategories(){
+ const q=$("#search").value.toLowerCase();
+ const box=$("#categories"); box.innerHTML="";
+ const list=data.categories.filter(c=>c.name.toLowerCase().includes(q)||c.items.some(i=>i.name.toLowerCase().includes(q)));
+ $("#emptyCategories").classList.toggle("hidden",list.length>0);
+ list.forEach(c=>{
+  const el=document.createElement("article"); el.className="category";
+  el.innerHTML=`<div class="category-head"><span class="cat-icon">${esc(c.icon)}</span><h3>${esc(c.name)}</h3><button class="mini edit-cat" title="Editar">✎</button><button class="mini del-cat" title="Excluir">×</button></div><div class="links">${c.items.map(i=>`<a class="shortcut" href="${esc(i.url)}" target="_blank" rel="noopener"><span class="type">${i.kind||"🔗"}</span><span>${esc(i.name)}</span><span class="tag">${esc(i.url.replace(/^https?:\/\//,"").split("/")[0])}</span></a>`).join("")}</div><button class="add-item">＋ Adicionar atalho</button>`;
+  el.querySelector(".edit-cat").onclick=()=>categoryModal(c);
+  el.querySelector(".del-cat").onclick=()=>{if(confirm("Excluir esta categoria?")){data.categories=data.categories.filter(x=>x.id!==c.id);save();renderCategories()}};
+  el.querySelector(".add-item").onclick=()=>itemModal(c);
+  box.appendChild(el);
+ });
+}
+function categoryModal(existing=null){
+ openModal(existing?"Editar Categoria":"Criar Categoria",`<div class="field"><label>NOME</label><input id="fName" required value="${existing?esc(existing.name):""}" placeholder="Ex.: Estudos"></div><div class="field"><label>ÍCONE / EMOJI</label><input id="fIcon" value="${existing?esc(existing.icon):"📁"}" maxlength="4"></div><button class="primary form-submit">Salvar</button>`);
+ $("#modalForm").onsubmit=e=>{e.preventDefault();let name=$("#fName").value.trim();if(!name)return;if(existing){existing.name=name;existing.icon=$("#fIcon").value||"📁"}else data.categories.push({id:Date.now(),name,icon:$("#fIcon").value||"📁",items:[]});save();closeModal();renderCategories()};
+}
+function itemModal(cat){
+ openModal("Novo Atalho",`<div class="field"><label>NOME</label><input id="fName" required placeholder="Ex.: Notion"></div><div class="field"><label>URL</label><input id="fUrl" type="url" required placeholder="https://..."></div><button class="primary form-submit">Adicionar</button>`);
+ $("#modalForm").onsubmit=e=>{e.preventDefault();let name=$("#fName").value.trim(),url=$("#fUrl").value.trim();if(!/^https?:\/\//i.test(url))url="https://"+url;cat.items.push({id:Date.now(),name,url,kind:"🔗"});save();closeModal();renderCategories()};
+}
+function productModal(){
+ openModal("Adicionar Produto",`<div class="field"><label>NOME DO PRODUTO</label><input id="pName" required></div><div class="field"><label>LINK DE COMPRA</label><input id="pUrl" type="url" placeholder="https://..."></div><div class="field"><label>PREÇO (R$)</label><input id="pPrice" type="number" min="0" step="0.01" required></div><div class="field"><label>CATEGORIA</label><input id="pCat" placeholder="Ex.: Eletrônicos" required></div><div class="field"><label>URL DA IMAGEM</label><input id="pImg" type="url" placeholder="https://..."></div><button class="primary form-submit">Salvar Produto</button>`);
+ $("#modalForm").onsubmit=e=>{e.preventDefault();data.products.push({id:Date.now(),name:$("#pName").value.trim(),url:$("#pUrl").value.trim(),price:Number($("#pPrice").value)||0,category:$("#pCat").value.trim(),image:$("#pImg").value.trim(),bought:false});save();closeModal();renderProducts()};
+}
+function renderProducts(){
+ const box=$("#products");box.innerHTML="";let active=data.products.filter(p=>!p.bought),total=active.reduce((a,p)=>a+p.price,0);
+ $("#total").textContent=total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+ $("#emptyProducts").classList.toggle("hidden",data.products.length>0);
+ const sums={};active.forEach(p=>sums[p.category]=(sums[p.category]||0)+p.price);
+ let entries=Object.entries(sums), sum=entries.reduce((a,[,v])=>a+v,0), acc=0, stops=[];
+ const shades=["#ff1e27","#b80f1c","#711019","#421218","#e03b43"];
+ entries.forEach(([cat,v],i)=>{let pct=sum?v/sum*100:0;stops.push(`${shades[i%shades.length]} ${acc}% ${acc+pct}%`);acc+=pct});
+ $("#donut").style.background=`conic-gradient(${stops.length?stops.join(", "):"#421218 0 100%"})`;
+ $("#legend").innerHTML=entries.map(([c,v],i)=>`<div><i class="dot" style="background:${shades[i%shades.length]}"></i>${esc(c)} · ${sum?(v/sum*100).toFixed(0):0}%</div>`).join("")||"<span style='color:#666'>Sem dados</span>";
+ data.products.forEach(p=>{
+  let el=document.createElement("article");el.className="product";
+  el.innerHTML=`<img src="${esc(p.image||"https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=80")}" onerror="this.src='https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=80'"><div class="product-body"><span class="tag">${esc(p.category)}</span><h3>${esc(p.name)}</h3><div class="price">${p.price.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}</div><div class="product-actions"><button class="action buy">${p.bought?"↩ Não comprado":"✓ Comprado"}</button>${p.url?`<a class="action" href="${esc(p.url)}" target="_blank" rel="noopener">Abrir ↗</a>`:""}<button class="action del">Excluir</button></div></div>`;
+  el.querySelector(".buy").onclick=()=>{p.bought=!p.bought;save();renderProducts()};
+  el.querySelector(".del").onclick=()=>{data.products=data.products.filter(x=>x.id!==p.id);save();renderProducts()};
+  box.appendChild(el)
+ })
+}
+function openModal(title,html){$("#modalTitle").textContent=title;$("#modalForm").innerHTML=html;$("#modalBackdrop").classList.remove("hidden")}
+function closeModal(){$("#modalBackdrop").classList.add("hidden")}
+document.querySelectorAll(".nav-btn").forEach(b=>b.onclick=()=>{document.querySelectorAll(".nav-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));$("#"+b.dataset.tab).classList.add("active")});
+$("#newCategory").onclick=()=>categoryModal();
+$("#newProduct").onclick=productModal;
+$("#closeModal").onclick=closeModal;
+$("#modalBackdrop").onclick=e=>{if(e.target.id==="modalBackdrop")closeModal()};
+$("#search").oninput=renderCategories;
+renderCategories();renderProducts();
+
+</script>
+</body>
+</html>
